@@ -5,11 +5,11 @@ namespace SalesOrderApp.Domain.Entities
 {
     public class SalesOrder
     {
-        public int SalesOrderId { get; set; }      // PK
-        public string OrderNumber { get; set; }    // e.g. SO-0001
+        public int SalesOrderId { get; set; }      
+        public string OrderNumber { get; set; }    
 
-        public int ClientId { get; set; }          // FK
-        public Client Client { get; set; }         // Nav property
+        public int ClientId { get; set; }          
+        public Client Client { get; set; }         
 
         public DateTime OrderDate { get; set; }
         public string Notes { get; set; }

@@ -115,7 +115,7 @@ namespace SalesOrderApp.API.Controllers
                     Quantity = l.Quantity,
                     Price = l.Price,
                     TaxRate = l.TaxRate,
-                    Description = "" // optional, not needed for backend
+                    Description = "" 
                 }).ToList() ?? new()
             };
 

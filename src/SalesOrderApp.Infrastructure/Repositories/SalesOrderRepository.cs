@@ -48,7 +48,7 @@ namespace SalesOrderApp.Infrastructure.Repositories
             existingOrder.OrderDate = newData.OrderDate;
             existingOrder.Notes = newData.Notes;
 
-            // Replace lines
+            
             _db.SalesOrderLines.RemoveRange(existingOrder.Lines);
             existingOrder.Lines = newData.Lines;
 

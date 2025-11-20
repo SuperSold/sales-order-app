@@ -2,18 +2,18 @@ namespace SalesOrderApp.Domain.Entities
 {
     public class SalesOrderLine
     {
-        public int SalesOrderLineId { get; set; }  // PK (or LineId)
+        public int SalesOrderLineId { get; set; }  
 
-        public int SalesOrderId { get; set; }      // FK to header
+        public int SalesOrderId { get; set; }      
         public SalesOrder SalesOrder { get; set; }
 
-        public int ItemId { get; set; }            // FK to Item
+        public int ItemId { get; set; }            
         public Item Item { get; set; }
 
         public decimal Quantity { get; set; }
-        public decimal Price { get; set; }         // Unit price at order time
-        public decimal TaxRate { get; set; }       // e.g. 15 for 15%
+        public decimal Price { get; set; }         
+        public decimal TaxRate { get; set; }       
 
-        // We’ll calculate Excl/Tax/Incl totals in DTO or service layer
+        
     }
 }

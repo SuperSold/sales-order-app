@@ -12,7 +12,7 @@ namespace SalesOrderApp.Domain.Entities
         public string City { get; set; }
         public string ContactNumber { get; set; }
 
-        // Navigation property
+      
         public ICollection<SalesOrder> SalesOrders { get; set; }
     }
 }

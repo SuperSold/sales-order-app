@@ -7,10 +7,10 @@ using SalesOrderApp.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 🔹 Register controllers (IMPORTANT)
+
 builder.Services.AddControllers();
 
-// Swagger & API explorer
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -18,7 +18,7 @@ builder.Services.AddScoped<SalesOrderRepository>();
 builder.Services.AddScoped<ISalesOrderService, SalesOrderService>();
 
 
-// CORS for React
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReact",
@@ -28,14 +28,14 @@ builder.Services.AddCors(options =>
             .WithOrigins("http://localhost:5173"));
 });
 
-// DbContext
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")
     )
 );
 
-// DI for repositories & services
+
 builder.Services.AddScoped<ClientRepository>();
 builder.Services.AddScoped<ItemRepository>();
 
@@ -44,7 +44,7 @@ builder.Services.AddScoped<IItemService, ItemService>();
 
 var app = builder.Build();
 
-// Middleware pipeline
+
 app.UseCors("AllowReact");
 
 if (app.Environment.IsDevelopment())
@@ -57,10 +57,10 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-// 🔹 Map attribute-routed controllers (ClientsController, ItemsController, etc.)
+
 app.MapControllers();
 
-// Optional: keep the minimal WeatherForecast endpoint if you want
+
 var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
